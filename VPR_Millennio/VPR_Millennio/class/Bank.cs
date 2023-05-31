@@ -4,16 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VPR_Millennio
+namespace VPR_Millennio.@class
 {
-    internal class Markt
+    internal class Bank
     {
-        public void kaufen()
-        {
-
-        }
-
-        public void verkaufen()
+        public void KreditAufnehmen()
         {
 
         }
