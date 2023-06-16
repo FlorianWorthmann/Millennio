@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     
     <Grid>
-        <DockPanel x:Name="DockPanelLager" Visibility="Hidden">
+        <DockPanel x:Name="DockPanelLager" Visibility="Visible">
             <Label BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Lager</Label>
             <Grid>
                 <Grid.RowDefinitions>
@@ -614,9 +614,9 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="Spiel starten" Click="StartGameButton_Click"/>
-                <Button Content="Optionen" Click="OptionsButton_Click"/>
-                <Button Content="Beenden" Click="ExitButton_Click"/>
+                <Button Content="Spiel starten" />
+                <Button Content="Optionen" />
+                <Button Content="Beenden" />
             </StackPanel>
 
             <Popup x:Name="DropdownMenu" PlacementTarget="{Binding ElementName=StartGameButton}" IsOpen="False">
@@ -629,7 +629,7 @@
                         </ListBox>
                         <Button Content="Laden"/>
                         <Button Content="Speichern"/>
-                        <Button Content="Abbrechen" Click="CancelDropdownButton_Click"/>
+                        <Button Content="Abbrechen" />
                     </StackPanel>
                 </Border>
             </Popup>
