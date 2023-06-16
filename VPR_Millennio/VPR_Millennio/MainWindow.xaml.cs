@@ -23,6 +23,7 @@ namespace VPR_Millennio
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine("test");
         }
     }
 }

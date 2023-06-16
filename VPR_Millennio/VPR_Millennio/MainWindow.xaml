@@ -6,7 +6,697 @@
         xmlns:local="clr-namespace:VPR_Millennio"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
+        <DockPanel x:Name="DockPanelLager" Visibility="Visible">
+            <Label BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Lager</Label>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Header Zeile -->
+                    <RowDefinition Height="*"/>
+                    <!-- Grid Zeilen -->
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <!-- Grid Zeilen -->
+                    <!-- ... füge weitere Grid Zeilen hinzu ... -->
+                </Grid.RowDefinitions>
 
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+
+
+                    <!-- Grid Spalten -->
+                    <!-- ... füge weitere Grid Spalten hinzu ... -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Header-Zeile -->
+                <Label Grid.Row="0" Grid.Column="0" Content="Baustoffe" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Row="0" Grid.Column="1" Content="Bergbau" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Verbrauchsstoff" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Row="0" Grid.Column="3" Content="Landwirtschaft" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Row="0" Grid.Column="4" Content="Lebensmittelproduktion" BorderThickness="1" BorderBrush="Black"/>
+                <Label Grid.Row="0" Grid.Column="5" Content="Luxusgüter" BorderThickness="1" BorderBrush="Black"/>
+
+                <!-- ... füge weitere Header-Zellen hinzu ... -->
+
+                <!-- Grid-Zellen -->
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Holz</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Kohle</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Mehl</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Getreide</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Wasser</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="1" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Silberbesteck</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Planken</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Lehm</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Kleidung</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Tier</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Fische</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Luxuskleidung</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Lehmziegel</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Holzkohle</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Werkzeuge</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Wolle</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Brot</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Schmuck</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Stoff</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Steine</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Trinkgläser</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Milch</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="4" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Käse</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="4" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Alkohol</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="5" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Steinziegel</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="5" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Eisenerz</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="5" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Präzisionswerkzeug</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="5" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Obst/Gemüse</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="5" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Fleisch</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="5" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="6" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Eisenbarren</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="6" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Kupfererz</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="6" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="6" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Eier</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="6" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="6" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="7" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Goldbarren</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="7" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Silbererz</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="7" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="7" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Lein</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="7" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="7" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="8" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Kupferbarren</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="8" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Sand</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="8" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="8" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="8" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="8" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="9" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Silberbarren</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="9" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Öl</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="9" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="9" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="9" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="9" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="10" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Glas</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Golderz</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="11" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Stahlbarren</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="11" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="11" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="11" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="11" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="11" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="12" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Imprägnierte Planken</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="12" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="12" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="12" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="12" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="12" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="13" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center">Leinenstoff</Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center">0</Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="13" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal" Height="24" VerticalAlignment="Top">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="13" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="13" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="13" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="13" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Row="14" Grid.Column="0" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="14" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="14" Grid.Column="2" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="14" Grid.Column="3" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="14" Grid.Column="4" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Row="14" Grid.Column="5" BorderBrush="Black" BorderThickness="1,0,1,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                        <Label HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+                    </StackPanel>
+                </Border>
+
+
+
+
+
+
+
+
+
+
+
+                <!-- ... füge weitere Grid-Zellen hinzu ... -->
+
+                <!-- ... füge weitere Grid-Zellen für andere Zeilen hinzu ... -->
+            </Grid>
+
+        </DockPanel>
+        <Grid x:Name="GridHauptmenue" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Spiel starten" />
+                <Button Content="Optionen" />
+                <Button Content="Beenden" />
+            </StackPanel>
+
+            <Popup x:Name="DropdownMenu" PlacementTarget="{Binding ElementName=StartGameButton}" IsOpen="False">
+                <Border Background="White" BorderThickness="1" BorderBrush="Black">
+                    <StackPanel>
+                        <ListBox>
+                            <ListBoxItem Content="Level 1"/>
+                            <ListBoxItem Content="Level 2"/>
+                            <ListBoxItem Content="Level 3"/>
+                        </ListBox>
+                        <Button Content="Laden"/>
+                        <Button Content="Speichern"/>
+                        <Button Content="Abbrechen" />
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </Grid>
+        <DockPanel x:Name="DockPanelInGame" Visibility="Hidden">
+            <Border DockPanel.Dock="Top" Height="100" BorderThickness="1" BorderBrush="Black">
+                <DockPanel>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">eeee</TextBlock>
+                </DockPanel>
+            </Border>
+            <Border DockPanel.Dock="Top" Height="10" BorderThickness="1" BorderBrush="Black" Background="Red">
+                <DockPanel>
+
+                </DockPanel>
+            </Border>
+            <Border DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="Black">
+                <DockPanel>
+                    <Border DockPanel.Dock="Right" Width="400" Background="White" BorderThickness="1" BorderBrush="Black">
+                        <DockPanel>
+
+                        </DockPanel>
+                    </Border>
+                    <Border Background="White" BorderThickness="1" BorderBrush="Black">
+                        <DockPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+
+                                </Grid.RowDefinitions>
+                                <Button Grid.Column="0" Grid.Row="0">Button 1</Button>
+                                <Button Grid.Column="1" Grid.Row="0">Button 2</Button>
+                                <Button Grid.Column="2" Grid.Row="0">Button 3</Button>
+                                <Button Grid.Column="3" Grid.Row="0">Button 4</Button>
+                                <Button Grid.Column="4" Grid.Row="0">Button 5</Button>
+                                <Button Grid.Column="5" Grid.Row="0">Button 6</Button>
+                                <Button Grid.Column="6" Grid.Row="0">Button 7</Button>
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </DockPanel>
+            </Border>
+
+
+
+        </DockPanel>
     </Grid>
 </Window>
