@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     
     <Grid>
-        <DockPanel x:Name="DockPanelLager" Visibility="Visible">
+        <DockPanel x:Name="DockPanelLager" Visibility="Hidden">
             <Label BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Lager</Label>
             <Grid>
                 <Grid.RowDefinitions>

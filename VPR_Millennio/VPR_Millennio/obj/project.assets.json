@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bib\\source\\repos\\Millennio\\VPR_Millennio\\VPR_Millennio\\VPR_Millennio.csproj",
+      "projectUniqueName": "C:\\Users\\bib\\source\\repos\\Schlammkrabler\\VPR_Millennio\\VPR_Millennio\\VPR_Millennio.csproj",
       "projectName": "VPR_Millennio",
-      "projectPath": "C:\\Users\\bib\\source\\repos\\Millennio\\VPR_Millennio\\VPR_Millennio\\VPR_Millennio.csproj",
+      "projectPath": "C:\\Users\\bib\\source\\repos\\Schlammkrabler\\VPR_Millennio\\VPR_Millennio\\VPR_Millennio.csproj",
       "packagesPath": "C:\\Users\\bib\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bib\\source\\repos\\Millennio\\VPR_Millennio\\VPR_Millennio\\obj\\",
+      "outputPath": "C:\\Users\\bib\\source\\repos\\Schlammkrabler\\VPR_Millennio\\VPR_Millennio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bib\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
