@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VPR_Millennio.@class;
 
 namespace VPR_Millennio
 {
@@ -20,10 +21,57 @@ namespace VPR_Millennio
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Bank bank;
+        public int currentMoney = -10000;
+
         public MainWindow()
         {
             InitializeComponent();
-            Console.WriteLine("test");
+            lblMoneyDisplayBank.Content = "Money: " + currentMoney;
+            bank = new Bank();
+        }
+
+        
+
+        private void BtnTake10000Loan_Click(object sender, RoutedEventArgs e)
+        {
+
+            currentMoney += bank.TakeLoan(10000);
+            UpdateBankUI();
+        }
+
+        private void BtnTake20000Loan_Click(object sender, RoutedEventArgs e)
+        {
+            currentMoney += bank.TakeLoan(20000);
+            UpdateBankUI();
+        }
+
+        private void BtnTake50000Loan_Click(object sender, RoutedEventArgs e)
+        {
+            currentMoney += bank.TakeLoan(50000);
+            UpdateBankUI();
+        }
+
+        
+
+        private void BtnPayBack_Click(object sender, RoutedEventArgs e)
+        {
+            int payBackAmount = Convert.ToInt32(tbPayBackAmountBank.Text);
+            if (currentMoney - payBackAmount >= 0)
+            {
+                bank.PayBack(payBackAmount);
+                currentMoney -= payBackAmount;
+                UpdateBankUI();
+                
+            }
+            
+        }
+
+        
+        private void UpdateBankUI()
+        {
+            lblMoneyDisplayBank.Content = "Money: " + currentMoney;
+            lblCurrentLoan.Content = "Current loan: " + bank.CurrentLoan;
         }
     }
 }
