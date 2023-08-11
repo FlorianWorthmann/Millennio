@@ -1300,7 +1300,7 @@
             </Grid>
 
         </DockPanel>
-        <StackPanel x:Name="StackPanelBank" Visibility="Visible">
+        <StackPanel x:Name="StackPanelBank" Visibility="Hidden">
             
         
 
