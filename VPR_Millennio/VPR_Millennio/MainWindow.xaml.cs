@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using VPR_Millennio.@class;
 using System.Data.SqlClient;
+using VPR_Millennio.enumeration;
 
 namespace VPR_Millennio
 {
@@ -27,7 +28,9 @@ namespace VPR_Millennio
 
         public MainWindow()
         {
-            string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\bib\\Desktop\\Millennio\\VPR_Millennio\\VPR_Millennio\\GebaeudeDaten.mdf;Integrated Security=True";
+            GebaeudeDatabase database = new GebaeudeDatabase();
+
+            List<Gebaeude> mitglieder = database.SelectAll();
 
             InitializeComponent();
             lblMoneyDisplayBank.Content = "Money: " + currentMoney;

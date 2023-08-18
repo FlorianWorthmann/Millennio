@@ -8,12 +8,12 @@ namespace VPR_Millennio.enumeration
 {
     internal enum Kategorie
     {
-        Baustoffe,
-        Bergbau,
-        Infrastruktur,
-        Landwirtschaft,
-        Lebensmittelproduktion,
-        Luxusgüter,
-        Verbrauchsstoff
+        Baustoffe = 1,
+        Bergbau = 2,
+        Infrastruktur = 3, 
+        Landwirtschaft = 4,
+        Lebensmittelproduktion = 5,
+        Luxusgüter = 6,
+        Verbrauchsstoff = 7
     }
 }

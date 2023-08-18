@@ -8,9 +8,9 @@ namespace VPR_Millennio.enumeration
 {
     internal enum Feldanforderungen
     {
-        Grassland,
-        Gebirge,
-        Wueste,
-        Wasser
+        Grassland = 1,
+        Gebirge = 2,
+        Wueste = 3,
+        Wasser = 4
     }
 }
