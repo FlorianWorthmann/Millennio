@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "685rxfbrFr3SsiOysr7EhRb4vVlY3j+XTc2DeGrbUWD6Vpg/s0a8MwsqrflzgE/bciTh1S9X81dYKehV2DJJ6w==",
+  "dgSpecHash": "x1DqIfpqJinWvVGK9Bn+Efi+ZeN/gjaKt9oR3S+tZt2zPVhQd41nl/Au7zHwKULZD8ayky/T9f9sajYjMZKTOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bib\\source\\repos\\Millennio\\VPR_Millennio\\VPR_Millennio\\VPR_Millennio.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\bib\\Desktop\\Millennio\\VPR_Millennio\\VPR_Millennio\\VPR_Millennio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bib\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\bib\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
