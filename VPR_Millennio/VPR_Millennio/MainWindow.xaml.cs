@@ -22,13 +22,13 @@ namespace VPR_Millennio
     /// </summary>
     public partial class MainWindow : Window
     {
-        string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\bib\\Desktop\\Millennio\\VPR_Millennio\\VPR_Millennio\\GebaeudeDaten.mdf;Integrated Security=True";
-        
         private Bank bank;
         public int currentMoney = -10000;
 
         public MainWindow()
         {
+            string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\bib\\Desktop\\Millennio\\VPR_Millennio\\VPR_Millennio\\GebaeudeDaten.mdf;Integrated Security=True";
+
             InitializeComponent();
             lblMoneyDisplayBank.Content = "Money: " + currentMoney;
             bank = new Bank();
