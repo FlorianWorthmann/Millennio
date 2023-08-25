@@ -12,7 +12,7 @@ namespace VPR_Millennio.@class
 {
     internal class GebaeudeDatabase
     {
-        private const string ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\bib\Desktop\Millennio\VPR_Millennio\VPR_Millennio\GebaeudeDaten.mdf;Integrated Security = True";
+        private const string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\bib\Desktop\Millennio\VPR_Millennio\VPR_Millennio\GebaeudeDaten.mdf;Integrated Security = True";
         private SqlConnection _connection;
 
         public GebaeudeDatabase()
