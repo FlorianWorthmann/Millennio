@@ -132,5 +132,12 @@ namespace VPR_Millennio.@class
 			Feld = feld;
 			Kategorie = kategorie;
 		}
+
+		public override string ToString()
+		{
+			return $"Gebaeude: [Gebaudename: {Gebaeudename}, Produktion: {Produktion}, Tier 1: {Tier_1}, Tier 2: {Tier_2}, Tier 3: {Tier_3}, Produktionsrate 1: {produktionsrate_1}," +
+                $" Produktionsrate 2: {produktionsrate_2}, Produktionsrate 3: {produktionsrate_3}, Produktionskosten 1: {produktionskosten_1}, Produktionskosten 2: {produktionskosten_2}," +
+                $" Produktionskosten 3: {produktionskosten_3}, Feldanforderung: {feld}, Kategorie: {kategorie}]";
+		}
 	}
 }
