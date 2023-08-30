@@ -6,11 +6,32 @@
         xmlns:local="clr-namespace:VPR_Millennio"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Grid>
         <DockPanel x:Name="DockPanelLager" Visibility="Hidden">
-            <Label BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Lager</Label>
+            <Grid x:Name="GridLabelLager" DockPanel.Dock="Top">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Lager</Label>
+                <Button Name="btnExitLager" Grid.Row="0" Grid.Column="1" FontSize="40" BorderThickness="0,3,3,3" BorderBrush="Black" Click="btnExitLager_Click">X</Button>
+            </Grid>
+
             <Grid>
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <!-- Header Zeile -->
@@ -607,11 +628,28 @@
 
         </DockPanel>
         <DockPanel x:Name="DockPanelMarkt" Visibility="Hidden">
-            <Label BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Markt</Label>
-            <StackPanel DockPanel.Dock="Right">
-                
-            </StackPanel>
+            <Grid x:Name="GridLabelMarkt" DockPanel.Dock="Top">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Markt</Label>
+                <Button Name="btnExitMarkt" Grid.Row="0" Grid.Column="1" FontSize="40" BorderThickness="0,3,3,3" BorderBrush="Black" Click="btnExitMarkt_Click">X</Button>
+            </Grid>
             <Grid DockPanel.Dock="Left">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <!-- Header Zeile -->
@@ -1204,15 +1242,27 @@
                 <!-- ... füge weitere Grid-Zellen hinzu ... -->
 
                 <!-- ... füge weitere Grid-Zellen für andere Zeilen hinzu ... -->
-                
+
             </Grid>
 
         </DockPanel>
         <StackPanel x:Name="StackPanelBank" Visibility="Hidden">
-
-
-
-            <Label BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Bank</Label>
+            <Grid x:Name="GridLabelBank" DockPanel.Dock="Top">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Bank</Label>
+                <Button Name="btnExitBank" Grid.Row="0" Grid.Column="1" FontSize="40" BorderThickness="0,3,3,3" BorderBrush="Black" Click="btnExitBank_Click">X</Button>
+            </Grid>
             <Label x:Name="lblMoneyDisplayBank" HorizontalAlignment="Center">Money: 0</Label>
             <Label x:Name="lblCurrentLoan" HorizontalAlignment="Center" Content="Current Loan: $0" />
 
@@ -1226,10 +1276,23 @@
             <Button Width="150" Content="Pay Back" Click="BtnPayBack_Click"/>
             <TextBox x:Name="tbPayBackAmountBank" Width="150" BorderBrush="Black" BorderThickness="1"></TextBox>
         </StackPanel>
-        <DockPanel x:Name="DockPanelInGame" Visibility="Hidden">
-            <Border DockPanel.Dock="Top" Height="100" BorderThickness="1" BorderBrush="Black">
+        <DockPanel x:Name="DockPanelInGame" Visibility="Visible">
+
+            <Border x:Name="RegionInGameTop" DockPanel.Dock="Top" Height="100" BorderThickness="1" BorderBrush="Black">
                 <DockPanel>
                     <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="BorderBrush" Value="Black"/>
+                            </Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="True"/>
+                            </Style>
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1*" />
@@ -1243,27 +1306,106 @@
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1*" />
-
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*" />
                             <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Border Grid.Column="0" Grid.Row="0" BorderThickness="1,1,7,3" BorderBrush="Black">
-                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Millenio</TextBlock>
+                        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" BorderThickness="0,0,1,0">
+                            <TextBlock>Millenio</TextBlock>
                         </Border>
-                        <Border Grid.Column="2" Grid.Row="0" BorderThickness="1" BorderBrush="Black">
-                            <TextBlock Name="tbGoldLabel" VerticalAlignment="Center" HorizontalAlignment="Center">Gold:</TextBlock>
+                        <Border Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0">
+                            <Button Name="btnMarktInGame" Click="btnMarktInGame_Click">Markt</Button>
                         </Border>
-                        <Border Grid.Column="2" Grid.Row="1" BorderThickness="1" BorderBrush="Black">
-                            <TextBlock Name="tbGoldValue" VerticalAlignment="Center" HorizontalAlignment="Center">XXX</TextBlock>
+                        <Border Grid.Column="5" Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0">
+                            <Button Name="btnLagerInGame" Click="btnLagerInGame_Click">Lager</Button>
+                        </Border>
+                        <Border Grid.Column="7" Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="0">
+                            <Button Name="btnBankInGame" Click="btnBankInGame_Click">Bank</Button>
+                        </Border>
+                        <Border Grid.Column="9" Grid.Row="0" Grid.ColumnSpan="3" BorderThickness="0">
+                            <Button Name="btnMenuInGame" Click="btnMenuInGame_Click">Menu</Button>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel00InGame">Geld:</TextBlock>
+                        </Border>
+                        <Border Grid.Column="0" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue00InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel01InGame">Holz</TextBlock>
+                        </Border>
+                        <Border Grid.Column="1" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue01InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel02InGame">Planken</TextBlock>
+                        </Border>
+                        <Border Grid.Column="2" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue02InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel03InGame">Lehmziegel</TextBlock>
+                        </Border>
+                        <Border Grid.Column="3" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue03InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel04InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="4" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue04InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel05InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="5" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue05InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel06InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="6" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue06InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="7" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel07InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="7" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue07InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="8" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel08InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="8" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue08InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="9" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel09InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="9" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue09InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="10" Grid.Row="1" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesLabel10InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="10" Grid.Row="2" BorderThickness="0,1,1,0">
+                            <TextBlock Name="tbResourcesValue10InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="11" Grid.Row="1" BorderThickness="0,1,0,0">
+                            <TextBlock Name="tbResourcesLabel11InGame"></TextBlock>
+                        </Border>
+                        <Border Grid.Column="11" Grid.Row="2" BorderThickness="0,1,0,0">
+                            <TextBlock Name="tbResourcesValue11InGame"></TextBlock>
                         </Border>
                     </Grid>
                 </DockPanel>
             </Border>
-            <Border DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="Black">
+            <Border x:Name="RegionInGameBottom" DockPanel.Dock="Bottom" BorderThickness="0" BorderBrush="Black">
                 <DockPanel>
-                    <Border DockPanel.Dock="Right" Width="200" Background="White" BorderThickness="1" BorderBrush="Black">
+                    <!-- SideBar mit Map -->
+                    <Border DockPanel.Dock="Right" Width="200" Background="White" BorderThickness="0,0,1,1" BorderBrush="Black">
                         <DockPanel>
                             <DockPanel>
                                 <Grid>
@@ -1274,6 +1416,7 @@
                                         <RowDefinition Height="1*" />
                                         <RowDefinition Height="4*" />
                                         <RowDefinition Height="6*" />
+                                        <RowDefinition Height="1*" />
                                     </Grid.RowDefinitions>
                                     <DockPanel Grid.Column="0" Grid.Row="0">
                                         <Grid>
@@ -1285,11 +1428,18 @@
                                                 <RowDefinition Height="1*" />
                                             </Grid.RowDefinitions>
                                             <TextBlock Name="tbMapNameLabel" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">Map</TextBlock>
-                                            <TextBlock Name="tbMapNameValue" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">XXX</TextBlock>
+                                            <TextBlock Name="tbMapNameValue" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">Basic Town</TextBlock>
                                         </Grid>
                                     </DockPanel>
                                     <DockPanel Grid.Column="0" Grid.Row="1">
                                         <Grid>
+                                            <Grid.Resources>
+                                                <Style TargetType="{x:Type Button}">
+                                                    <Setter Property="Background" Value="Gray"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </Style>
+                                            </Grid.Resources>
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="1*" />
                                                 <ColumnDefinition Width="1*" />
@@ -1301,31 +1451,91 @@
                                                 <RowDefinition Height="1*" />
 
                                             </Grid.RowDefinitions>
-                                            <Button Name="btnMap_00_00" Grid.Column="0" Grid.Row="0" Background="Gray" Foreground="White"></Button>
-                                            <Button Name="btnMap_01_00" Grid.Column="1" Grid.Row="0" Background="Gray" Foreground="White"></Button>
-                                            <Button Name="btnMap_02_00" Grid.Column="2" Grid.Row="0" Background="Gray" Foreground="White"></Button>
+                                            <Button Name="btnMap_00_00" Grid.Column="0" Grid.Row="0"></Button>
+                                            <Button Name="btnMap_01_00" Grid.Column="1" Grid.Row="0"></Button>
+                                            <Button Name="btnMap_02_00" Grid.Column="2" Grid.Row="0"></Button>
 
-                                            <Button Name="btnMap_00_01" Grid.Column="0" Grid.Row="1" Background="Gray" Foreground="White"></Button>
-                                            <Button Name="btnMap_01_01" Grid.Column="1" Grid.Row="1" Background="Gray" Foreground="White"></Button>
-                                            <Button Name="btnMap_02_01" Grid.Column="2" Grid.Row="1" Background="Gray" Foreground="White"></Button>
+                                            <Button Name="btnMap_00_01" Grid.Column="0" Grid.Row="1"></Button>
+                                            <Button Name="btnMap_01_01" Grid.Column="1" Grid.Row="1"></Button>
+                                            <Button Name="btnMap_02_01" Grid.Column="2" Grid.Row="1"></Button>
 
-                                            <Button Name="btnMap_00_02" Grid.Column="0" Grid.Row="2" Background="Gray" Foreground="White"></Button>
-                                            <Button Name="btnMap_01_02" Grid.Column="1" Grid.Row="2" Background="Gray" Foreground="White"></Button>
-                                            <Button Name="btnMap_02_02" Grid.Column="2" Grid.Row="2" Background="Gray" Foreground="White"></Button>
+                                            <Button Name="btnMap_00_02" Grid.Column="0" Grid.Row="2"></Button>
+                                            <Button Name="btnMap_01_02" Grid.Column="1" Grid.Row="2"></Button>
+                                            <Button Name="btnMap_02_02" Grid.Column="2" Grid.Row="2"></Button>
                                         </Grid>
                                     </DockPanel>
                                     <DockPanel Grid.Column="0" Grid.Row="2">
+                                        <Grid>
+                                            <Grid.Resources>
+                                                <Style TargetType="{x:Type ListBox}">
+                                                    <Setter Property="Background" Value="White"/>
+                                                    <Setter Property="Foreground" Value="Black"/>
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </Style>
+                                                <Style TargetType="{x:Type Button}">
+                                                    <Setter Property="Background" Value="Gray"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1.2*" />
+                                                <RowDefinition Height="1*" />
+                                                <RowDefinition Height="1*" />
+                                                <RowDefinition Height="1*" />
+                                                <RowDefinition Height="1*" />
+                                                <RowDefinition Height="1*" />
+                                                <RowDefinition Height="1*" />
+                                                <RowDefinition Height="1*" />
 
+                                            </Grid.RowDefinitions>
+                                            <Label Name="lbWerkleiste" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">Werkleiste</Label>
+                                            <ListBox Name="lbxWerkleiste" Grid.Row="1"></ListBox>
+                                            <Button Name="btnWerkleiste00" Grid.Row="2">Bauen</Button>
+
+                                        </Grid>
                                     </DockPanel>
+                                    <DockPanel Grid.Column="0" Grid.Row="3">
+                                        <Grid>
+                                            <Grid.Resources>
+                                                <Style TargetType="{x:Type Button}">
+                                                    <Setter Property="Background" Value="Gray"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </Style>
+                                            </Grid.Resources>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*" />
+                                                <!-- More Columnes for RealTime -->
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*" />
+                                            </Grid.RowDefinitions>
+                                            <Button Name="btnNextTurn" Grid.Column="0" Grid.Row="0">Next Turn</Button>
+
+                                        </Grid>
+                                    </DockPanel>
+
                                 </Grid>
                             </DockPanel>
 
                         </DockPanel>
 
                     </Border>
-                    <Border Background="White" BorderThickness="1" BorderBrush="Black">
+                    <!-- Spielberreich -->
+                    <Border Background="White" BorderThickness="1,0,1,1" BorderBrush="Black">
                         <DockPanel>
                             <Grid>
+                                <Grid.Resources>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="Blue"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                        <Setter Property="IsEnabled" Value="True"/>
+                                    </Style>
+                                </Grid.Resources>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="1*" />
@@ -1353,189 +1563,277 @@
                                     <RowDefinition Height="1*" />
 
                                 </Grid.RowDefinitions>
-                                <Button Name="btnGame_00_00" Grid.Column="0" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_00" Grid.Column="1" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_00" Grid.Column="2" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_00" Grid.Column="3" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_00" Grid.Column="4" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_00" Grid.Column="5" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_00" Grid.Column="6" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_00" Grid.Column="7" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_00" Grid.Column="8" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_00" Grid.Column="9" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_00" Grid.Column="10" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_00" Grid.Column="11" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_00" Grid.Column="12" Grid.Row="0" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_00" Grid.Column="13" Grid.Row="0" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_00" Grid.Column="0" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_00" Grid.Column="1" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_00" Grid.Column="2" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_00" Grid.Column="3" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_00" Grid.Column="4" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_00" Grid.Column="5" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_00" Grid.Column="6" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_00" Grid.Column="7" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_00" Grid.Column="8" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_00" Grid.Column="9" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_00" Grid.Column="10" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_00" Grid.Column="11" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_00" Grid.Column="12" Grid.Row="0" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_00" Grid.Column="13" Grid.Row="0" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_01" Grid.Column="0" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_01" Grid.Column="1" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_01" Grid.Column="2" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_01" Grid.Column="3" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_01" Grid.Column="4" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_01" Grid.Column="5" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_01" Grid.Column="6" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_01" Grid.Column="7" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_01" Grid.Column="8" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_01" Grid.Column="9" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_01" Grid.Column="10" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_01" Grid.Column="11" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_01" Grid.Column="12" Grid.Row="1" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_01" Grid.Column="13" Grid.Row="1" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_01" Grid.Column="0" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_01" Grid.Column="1" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_01" Grid.Column="2" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_01" Grid.Column="3" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_01" Grid.Column="4" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_01" Grid.Column="5" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_01" Grid.Column="6" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_01" Grid.Column="7" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_01" Grid.Column="8" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_01" Grid.Column="9" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_01" Grid.Column="10" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_01" Grid.Column="11" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_01" Grid.Column="12" Grid.Row="1" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_01" Grid.Column="13" Grid.Row="1" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_02" Grid.Column="0" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_02" Grid.Column="1" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_02" Grid.Column="2" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_02" Grid.Column="3" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_02" Grid.Column="4" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_02" Grid.Column="5" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_02" Grid.Column="6" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_02" Grid.Column="7" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_02" Grid.Column="8" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_02" Grid.Column="9" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_02" Grid.Column="10" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_02" Grid.Column="11" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_02" Grid.Column="12" Grid.Row="2" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_02" Grid.Column="13" Grid.Row="2" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_02" Grid.Column="0" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_02" Grid.Column="1" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_02" Grid.Column="2" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_02" Grid.Column="3" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_02" Grid.Column="4" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_02" Grid.Column="5" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_02" Grid.Column="6" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_02" Grid.Column="7" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_02" Grid.Column="8" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_02" Grid.Column="9" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_02" Grid.Column="10" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_02" Grid.Column="11" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_02" Grid.Column="12" Grid.Row="2" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_02" Grid.Column="13" Grid.Row="2" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_03" Grid.Column="0" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_03" Grid.Column="1" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_03" Grid.Column="2" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_03" Grid.Column="3" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_03" Grid.Column="4" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_03" Grid.Column="5" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_03" Grid.Column="6" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_03" Grid.Column="7" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_03" Grid.Column="8" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_03" Grid.Column="9" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_03" Grid.Column="10" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_03" Grid.Column="11" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_03" Grid.Column="12" Grid.Row="3" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_03" Grid.Column="13" Grid.Row="3" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_03" Grid.Column="0" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_03" Grid.Column="1" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_03" Grid.Column="2" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_03" Grid.Column="3" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_03" Grid.Column="4" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_03" Grid.Column="5" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_03" Grid.Column="6" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_03" Grid.Column="7" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_03" Grid.Column="8" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_03" Grid.Column="9" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_03" Grid.Column="10" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_03" Grid.Column="11" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_03" Grid.Column="12" Grid.Row="3" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_03" Grid.Column="13" Grid.Row="3" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_04" Grid.Column="0" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_04" Grid.Column="1" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_04" Grid.Column="2" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_04" Grid.Column="3" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_04" Grid.Column="4" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_04" Grid.Column="5" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_04" Grid.Column="6" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_04" Grid.Column="7" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_04" Grid.Column="8" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_04" Grid.Column="9" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_04" Grid.Column="10" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_04" Grid.Column="11" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_04" Grid.Column="12" Grid.Row="4" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_04" Grid.Column="13" Grid.Row="4" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_04" Grid.Column="0" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_04" Grid.Column="1" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_04" Grid.Column="2" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_04" Grid.Column="3" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_04" Grid.Column="4" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_04" Grid.Column="5" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_04" Grid.Column="6" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_04" Grid.Column="7" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_04" Grid.Column="8" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_04" Grid.Column="9" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_04" Grid.Column="10" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_04" Grid.Column="11" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_04" Grid.Column="12" Grid.Row="4" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_04" Grid.Column="13" Grid.Row="4" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_05" Grid.Column="0" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_05" Grid.Column="1" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_05" Grid.Column="2" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_05" Grid.Column="3" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_05" Grid.Column="4" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_05" Grid.Column="5" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_05" Grid.Column="6" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_05" Grid.Column="7" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_05" Grid.Column="8" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_05" Grid.Column="9" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_05" Grid.Column="10" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_05" Grid.Column="11" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_05" Grid.Column="12" Grid.Row="5" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_05" Grid.Column="13" Grid.Row="5" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_05" Grid.Column="0" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_05" Grid.Column="1" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_05" Grid.Column="2" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_05" Grid.Column="3" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_05" Grid.Column="4" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_05" Grid.Column="5" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_05" Grid.Column="6" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_05" Grid.Column="7" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_05" Grid.Column="8" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_05" Grid.Column="9" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_05" Grid.Column="10" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_05" Grid.Column="11" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_05" Grid.Column="12" Grid.Row="5" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_05" Grid.Column="13" Grid.Row="5" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_06" Grid.Column="0" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_06" Grid.Column="1" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_06" Grid.Column="2" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_06" Grid.Column="3" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_06" Grid.Column="4" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_06" Grid.Column="5" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_06" Grid.Column="6" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_06" Grid.Column="7" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_06" Grid.Column="8" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_06" Grid.Column="9" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_06" Grid.Column="10" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_06" Grid.Column="11" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_06" Grid.Column="12" Grid.Row="6" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_06" Grid.Column="13" Grid.Row="6" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_06" Grid.Column="0" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_06" Grid.Column="1" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_06" Grid.Column="2" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_06" Grid.Column="3" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_06" Grid.Column="4" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_06" Grid.Column="5" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_06" Grid.Column="6" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_06" Grid.Column="7" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_06" Grid.Column="8" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_06" Grid.Column="9" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_06" Grid.Column="10" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_06" Grid.Column="11" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_06" Grid.Column="12" Grid.Row="6" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_06" Grid.Column="13" Grid.Row="6" Click="btnGame_Any_Click"></Button>
 
-                                <Button Name="btnGame_00_07" Grid.Column="0" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_01_07" Grid.Column="1" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_02_07" Grid.Column="2" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_03_07" Grid.Column="3" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_04_07" Grid.Column="4" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_05_07" Grid.Column="5" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_06_07" Grid.Column="6" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_07_07" Grid.Column="7" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_08_07" Grid.Column="8" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_09_07" Grid.Column="9" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_10_07" Grid.Column="10" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_11_07" Grid.Column="11" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_12_07" Grid.Column="12" Grid.Row="7" Background="Blue" Foreground="White"></Button>
-                                <Button Name="btnGame_13_07" Grid.Column="13" Grid.Row="7" Background="Blue" Foreground="White"></Button>
+                                <Button Name="btnGame_00_07" Grid.Column="0" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_01_07" Grid.Column="1" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_02_07" Grid.Column="2" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_03_07" Grid.Column="3" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_04_07" Grid.Column="4" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_05_07" Grid.Column="5" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_06_07" Grid.Column="6" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_07_07" Grid.Column="7" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_08_07" Grid.Column="8" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_09_07" Grid.Column="9" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_10_07" Grid.Column="10" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_11_07" Grid.Column="11" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_12_07" Grid.Column="12" Grid.Row="7" Click="btnGame_Any_Click"></Button>
+                                <Button Name="btnGame_13_07" Grid.Column="13" Grid.Row="7" Click="btnGame_Any_Click"></Button>
                             </Grid>
                         </DockPanel>
                     </Border>
                 </DockPanel>
             </Border>
+        </DockPanel>
+        <DockPanel x:Name="DockPanelBaumenu" Visibility="Hidden">
+            <Grid x:Name="GridLabelBaumenu" DockPanel.Dock="Top">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Label}">
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" BorderThickness="3" BorderBrush="Black"  Height="75" DockPanel.Dock="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="40" VerticalAlignment="Top">Gebäude</Label>
+                <Button Name="btnExitBaumenu" Grid.Row="0" Grid.Column="1" FontSize="40" BorderThickness="0,3,3,3" BorderBrush="Black" Click="btnExitBaumenu_Click">X</Button>
+            </Grid>
+            <Border BorderThickness="3,3,3,3" BorderBrush="Black" Margin="10,10,10,10">
+                <DockPanel Margin="10,10,10,10" Background="White">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                        <StackPanel VerticalAlignment="Top" Margin="0,-10,10,0">
+                            <StackPanel.Resources>
+                                <Style TargetType="{x:Type Grid}">
+                                    <Setter Property="Height" Value="90"/>
+                                    <Setter Property="VerticalAlignment" Value="Top"/>
+                                    <Setter Property="Background" Value="Silver"/>
+                                </Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="BorderThickness" Value="3"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <Border>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
 
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="0.1*" />
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="1*" />
 
+                                    </Grid.RowDefinitions>
+                                    <Grid>
+
+                                    </Grid>
+                                    <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">Name</Label>
+                                    <Label Grid.Column="1" Grid.Row="0">Name</Label>
+                                </Grid>
+                            </Border>
+                            <Border>
+                                <Grid>
+                                </Grid>
+                            </Border>
+                            <Border>
+                                <Grid>
+                                </Grid>
+                            </Border>
+                            <Border>
+                                <Grid>
+                                </Grid>
+                            </Border>
+                            <Border>
+                                <Grid>
+                                </Grid>
+                            </Border>
+                            <Border>
+                                <Grid>
+                                </Grid>
+                            </Border>
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
+            </Border>
 
         </DockPanel>
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+        <DockPanel x:Name="DockPanelHauptMenue" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0">
-                <Button Content="Spiel starten" Click="OnSpielStartenClicked" />
-                <StackPanel x:Name="SpielstandButtonsContainer" Orientation="Vertical" Visibility="Collapsed">
-                    <Button Content="Spielstand 1" Click="OnSpielstand1Clicked" />
-                    <Button Content="Spielstand 2" Click="OnSpielstand2Clicked" />
-                    <Button Content="Spielstand 3" Click="OnSpielstand3Clicked" />
-                    <Button Content="Spielstand 4" Click="OnSpielstand4Clicked" />
-                    <Button Content="Spielstand 5" Click="OnSpielstand5Clicked" />
-                </StackPanel>
-                <StackPanel x:Name="HorizontalButtonsContainer" Orientation="Horizontal" Visibility="Collapsed">
-                    <Button Content="Spielstand laden" Click="OnSpielstandLadenClicked" />
-                    <Button Content="Spielstand löschen" Click="OnSpielstandLoeschenClicked" />
-                    <Button Content="Neues Spiel" Click="OnNeuesSpielClicked" />
-                </StackPanel>
-                <Button Content="Optionen" />
-                <Button Content="Beenden" />
-            </StackPanel>
-
-            <Popup x:Name="DropdownMenu" PlacementTarget="{Binding ElementName=ButtonContainer}" IsOpen="False">
-                <Border Background="White" BorderThickness="1" BorderBrush="Black">
-                    <StackPanel>
-                        <ListBox>
-                            <ListBoxItem Content="Level 1" />
-                            <ListBoxItem Content="Level 2" />
-                            <ListBoxItem Content="Level 3" />
-                        </ListBox>
-                        <Button Content="Laden" />
-                        <Button Content="Speichern" />
-                        <Button Content="Abbrechen" />
+                <StackPanel Grid.Row="0">
+                    <Button Content="Spiel starten" Click="OnSpielStartenClicked" />
+                    <StackPanel x:Name="SpielstandButtonsContainer" Orientation="Vertical" Visibility="Collapsed">
+                        <Button Content="Spielstand 1" Click="OnSpielstand1Clicked" />
+                        <Button Content="Spielstand 2" Click="OnSpielstand2Clicked" />
+                        <Button Content="Spielstand 3" Click="OnSpielstand3Clicked" />
+                        <Button Content="Spielstand 4" Click="OnSpielstand4Clicked" />
+                        <Button Content="Spielstand 5" Click="OnSpielstand5Clicked" />
                     </StackPanel>
-                </Border>
-            </Popup>
+                    <StackPanel x:Name="HorizontalButtonsContainer" Orientation="Horizontal" Visibility="Collapsed">
+                        <Button Content="Spielstand laden" Click="OnSpielstandLadenClicked" />
+                        <Button Content="Spielstand löschen" Click="OnSpielstandLoeschenClicked" />
+                        <Button Content="Neues Spiel" Click="OnNeuesSpielClicked" />
+                    </StackPanel>
+                    <Button Content="Optionen" />
+                    <Button Content="Beenden" />
+                </StackPanel>
 
-            <TextBlock x:Name="SelectedSpielstandTextBlock" Grid.Row="4" HorizontalAlignment="Center" Margin="0,20" />
-        </Grid>
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
-                <TextBlock Text="In Game Menü" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                <Popup x:Name="DropdownMenu" PlacementTarget="{Binding ElementName=ButtonContainer}" IsOpen="False">
+                    <Border Background="White" BorderThickness="1" BorderBrush="Black">
+                        <StackPanel>
+                            <ListBox>
+                                <ListBoxItem Content="Level 1" />
+                                <ListBoxItem Content="Level 2" />
+                                <ListBoxItem Content="Level 3" />
+                            </ListBox>
+                            <Button Content="Laden" />
+                            <Button Content="Speichern" />
+                            <Button Content="Abbrechen" />
+                        </StackPanel>
+                    </Border>
+                </Popup>
 
-                <Button Content="Zurück zum Spiel" Click="BackToGame_Click" Margin="0,5"/>
-                <Button Content="Spiel laden" Click="LoadGame_Click" Margin="0,5"/>
-                <Button Content="Spiel speichern" Click="SaveGame_Click" Margin="0,5"/>
-                <Button Content="Optionen" Click="Options_Click" Margin="0,5"/>
-                <Button Content="Zurück zum Hauptmenü" Click="BackToMainMenu_Click" Margin="0,5"/>
-                <Button Content="Programm beenden" Click="ExitProgram_Click" Margin="0,5"/>
-            </StackPanel>
-        </Grid>
+                <TextBlock x:Name="SelectedSpielstandTextBlock" Grid.Row="4" HorizontalAlignment="Center" Margin="0,20" />
+            </Grid>
+        </DockPanel>
+        <DockPanel x:Name="DockPanelInGameMenu" Background="White" Opacity="0.9" Visibility="Hidden">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                    <TextBlock Text="In Game Menü" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                    <Button Content="Zurück zum Spiel" Click="BackToGame_Click" Margin="0,5"/>
+                    <Button Content="Spiel laden" Click="LoadGame_Click" Margin="0,5"/>
+                    <Button Content="Spiel speichern" Click="SaveGame_Click" Margin="0,5"/>
+                    <Button Content="Optionen" Click="Options_Click" Margin="0,5"/>
+                    <Button Content="Zurück zum Hauptmenü" Click="BackToMainMenu_Click" Margin="0,5"/>
+                    <Button Content="Programm beenden" Click="ExitProgram_Click" Margin="0,5"/>
+                </StackPanel>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

@@ -7,7 +7,7 @@ using VPR_Millennio.enumeration;
 
 namespace VPR_Millennio.@class
 {
-    internal class Lager : Gebaeude
+    internal class Lager //: Gebaeude
     {
         private int lagerplatz;
 
@@ -18,10 +18,10 @@ namespace VPR_Millennio.@class
         }
 
 
-        public Lager(string bezeichnung, Kategorie kategorie, Feldanforderungen feldanforderungen, int lagerplatz) : base(bezeichnung, kategorie, feldanforderungen)
-        {
-            Lagerplatz = lagerplatz;
-        }
+        //public Lager(string bezeichnung, Kategorie kategorie, Feldanforderungen feldanforderungen, int lagerplatz) : base(bezeichnung, kategorie, feldanforderungen)
+        //{
+        //    Lagerplatz = lagerplatz;
+        //}
 
         public void lagerplatzBerechnen()
         {

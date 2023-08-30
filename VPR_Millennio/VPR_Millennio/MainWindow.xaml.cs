@@ -26,6 +26,7 @@ namespace VPR_Millennio
         private Bank bank;
         public int currentMoney = -10000;
 
+
         public MainWindow()
         {
             GebaeudeDatabase database = new GebaeudeDatabase();
@@ -37,7 +38,7 @@ namespace VPR_Millennio
             bank = new Bank();
         }
 
-        
+
 
         private void BtnTake10000Loan_Click(object sender, RoutedEventArgs e)
         {
@@ -58,7 +59,7 @@ namespace VPR_Millennio
             UpdateBankUI();
         }
 
-        
+
 
         private void BtnPayBack_Click(object sender, RoutedEventArgs e)
         {
@@ -68,12 +69,12 @@ namespace VPR_Millennio
                 bank.PayBack(payBackAmount);
                 currentMoney -= payBackAmount;
                 UpdateBankUI();
-                
+
             }
-            
+
         }
 
-        
+
         private void UpdateBankUI()
         {
             lblMoneyDisplayBank.Content = "Money: " + currentMoney;
@@ -140,11 +141,10 @@ namespace VPR_Millennio
 
 
 
-
-        //In Game Menü
+        #region InGameMenu
         private void BackToGame_Click(object sender, RoutedEventArgs e)
         {
-
+            DockPanelInGameMenu.Visibility = Visibility.Hidden;
         }
 
         private void LoadGame_Click(object sender, RoutedEventArgs e)
@@ -164,7 +164,9 @@ namespace VPR_Millennio
 
         private void BackToMainMenu_Click(object sender, RoutedEventArgs e)
         {
-
+            DockPanelInGameMenu.Visibility = Visibility.Hidden;
+            DockPanelInGame.Visibility = Visibility.Hidden;
+            DockPanelHauptMenue.Visibility = Visibility.Visible;
         }
 
         private void ExitProgram_Click(object sender, RoutedEventArgs e)
@@ -173,5 +175,69 @@ namespace VPR_Millennio
             Application.Current.Shutdown();
 
         }
+        #endregion
+
+        #region InGame
+        private void btnMenuInGame_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelInGameMenu.Visibility = Visibility.Visible;
+        }
+
+        private void btnBankInGame_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelBank.Visibility = Visibility.Visible;
+            DockPanelInGame.Visibility = Visibility.Hidden;
+        }
+
+        private void btnLagerInGame_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelLager.Visibility = Visibility.Visible;
+            DockPanelInGame.Visibility = Visibility.Hidden;
+        }
+        private void btnMarktInGame_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelMarkt.Visibility = Visibility.Visible;
+            DockPanelInGame.Visibility = Visibility.Hidden;
+        }
+        #endregion
+
+        #region Lager
+        private void btnExitLager_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelLager.Visibility = Visibility.Hidden;
+            DockPanelInGame.Visibility = Visibility.Visible;
+        }
+        #endregion
+
+        #region Markt
+        private void btnExitMarkt_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelMarkt.Visibility = Visibility.Hidden;
+            DockPanelInGame.Visibility = Visibility.Visible;
+        }
+        #endregion
+
+        #region Bank
+        private void btnExitBank_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelBank.Visibility = Visibility.Hidden;
+            DockPanelInGame.Visibility = Visibility.Visible;
+        }
+        #endregion
+
+        private void btnGame_Any_Click(object sender, RoutedEventArgs e)
+        {
+            //wip
+            //if not Already Build on this tile
+            DockPanelBaumenu.Visibility = Visibility.Visible;
+            DockPanelInGame.Visibility = Visibility.Hidden;
+        }
+        #region BauenMenu
+        private void btnExitBaumenu_Click(object sender, RoutedEventArgs e)
+        {
+            DockPanelBaumenu.Visibility = Visibility.Hidden;
+            DockPanelInGame.Visibility = Visibility.Visible;
+        }
+        #endregion
     }
 }
